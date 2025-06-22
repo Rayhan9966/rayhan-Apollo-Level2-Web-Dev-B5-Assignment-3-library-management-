@@ -1,0 +1,92 @@
+[
+  {
+    "title": "The Theory of Everything",
+    "author": "Stephen Hawking",
+    "genre": "SCIENCE",
+    "isbn": "9780553380163",
+    "description": "An overview of cosmology and black holes.",
+    "copies": 5,
+    "available": true
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "FICTION",
+    "isbn": "9780451524935",
+    "description": "A dystopian novel about totalitarianism and surveillance.",
+    "copies": 8,
+    "available": true
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "genre": "SCIENCE",
+    "isbn": "9780553380163",
+    "description": "A journey through the universe's fundamental concepts.",
+    "copies": 3,
+    "available": true
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "FICTION",
+    "isbn": "9780060935467",
+    "description": "A story about justice and race in the American South.",
+    "copies": 6,
+    "available": true
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "genre": "HISTORY",
+    "isbn": "9780062316097",
+    "description": "Explores the history and impact of Homo sapiens.",
+    "copies": 7,
+    "available": true
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genre": "PSYCHOLOGY",
+    "isbn": "9780374533557",
+    "description": "Insights into how we think, make decisions, and perceive risk.",
+    "copies": 4,
+    "available": true
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "FICTION",
+    "isbn": "9780743273565",
+    "description": "A tragic tale of wealth and illusion in 1920s America.",
+    "copies": 5,
+    "available": true
+  },
+  {
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "genre": "SCIENCE",
+    "isbn": "9780192860927",
+    "description": "An influential perspective on evolution and natural selection.",
+    "copies": 4,
+    "available": true
+  },
+  {
+    "title": "Man's Search for Meaning",
+    "author": "Viktor E. Frankl",
+    "genre": "PHILOSOPHY",
+    "isbn": "9780807014271",
+    "description": "A Holocaust survivor's insights on life and purpose.",
+    "copies": 6,
+    "available": true
+  },
+  {
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "genre": "STRATEGY",
+    "isbn": "9781599869773",
+    "description": "Ancient Chinese military strategy with modern applications.",
+    "copies": 10,
+    "available": true
+  }
+]
