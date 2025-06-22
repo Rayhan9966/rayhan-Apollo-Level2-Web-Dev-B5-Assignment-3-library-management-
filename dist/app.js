@@ -41,9 +41,16 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const book_routes_1 = __importDefault(require("./routes/book.routes"));
 const borrow_routes_1 = __importDefault(require("./routes/borrow.routes"));
-dotenv_1.default.config();
 const app = (0, express_1.default)();
+dotenv_1.default.config();
 app.use(express_1.default.json());
+// Create handler for GET request /
+const getRootController = (req, res) => {
+    // Send response text
+    res.send('Weclome to Assignment 3 !!!');
+};
+// Route handler for /
+app.get('/', getRootController);
 app.use("/api", book_routes_1.default);
 app.use("/api", borrow_routes_1.default);
 exports.default = app;

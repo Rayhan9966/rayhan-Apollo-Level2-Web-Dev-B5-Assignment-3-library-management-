@@ -63,6 +63,9 @@ bookSchema.pre("save", function (next) {
         this.available = false;
     next();
 });
+bookSchema.methods.updateAvailability = function () {
+    this.copiesAvailable = this.copiesAvailable - 1;
+};
 // Instance method
 bookSchema.methods.updateAvailability = function () {
     this.available = this.copies > 0;

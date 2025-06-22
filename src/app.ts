@@ -37,15 +37,23 @@
 // app.get('/api/borrow', (req :Request, res:Response) => {
 //   res.send('Welcome assignment 3')
 // })
-import express from "express";
+import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import bookRoutes from "./routes/book.routes";
 import borrowRoutes from "./routes/borrow.routes";
-
+const app = express();
 dotenv.config();
 
-const app = express();
+
 app.use(express.json());
+
+// Create handler for GET request /
+const getRootController = (req: Request, res: Response) => {
+  // Send response text
+  res.send('Weclome to Assignment 3 !!!')
+}
+// Route handler for /
+app.get('/', getRootController)
 app.use("/api", bookRoutes);
 app.use("/api", borrowRoutes);
 

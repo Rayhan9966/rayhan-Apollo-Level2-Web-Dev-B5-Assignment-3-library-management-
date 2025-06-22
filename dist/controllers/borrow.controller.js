@@ -12,71 +12,45 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getBorrowSummary = exports.borrowBook = void 0;
 const book_model_1 = require("../models/book.model");
 const borrow_model_1 = require("../models/borrow.model");
-const errorHandler_1 = require("../utils/errorHandler");
 const borrowBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const { book, quantity, dueDate } = req.body;
-        const targetBook = yield book_model_1.Book.findById(book);
-        if (!targetBook || targetBook.copies < quantity) {
-            return res.status(400).json({
-                success: false,
-                message: "Not enough copies available",
-                error: "Insufficient stock"
-            });
-        }
-        targetBook.copies -= quantity;
-        targetBook.updateAvailability();
-        yield targetBook.save();
-        const borrow = yield borrow_model_1.Borrow.create({ book, quantity, dueDate });
-        res.status(201).json({
-            success: true,
-            message: "Book borrowed successfully",
-            data: borrow
+    const { book, quantity, dueDate } = req.body;
+    const targetBook = yield book_model_1.Book.findById(book);
+    if (!targetBook || targetBook.copies < quantity) {
+        return res.status(400).json({
+            success: false,
+            message: "Not enough copies available",
+            error: "Insufficient stock"
         });
     }
-    catch (err) {
-        (0, errorHandler_1.handleError)(res, err);
-    }
+    targetBook.copies -= quantity;
+    targetBook.updateAvailability();
+    yield targetBook.save();
+    const borrow = yield borrow_model_1.Borrow.create({ book, quantity, dueDate });
+    res.status(201).json({ success: true, message: "Book borrowed successfully", data: borrow });
 });
 exports.borrowBook = borrowBook;
 const getBorrowSummary = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const summary = yield borrow_model_1.Borrow.aggregate([
-            {
-                $group: {
-                    _id: "$book",
-                    totalQuantity: { $sum: "$quantity" }
-                }
-            },
-            {
-                $lookup: {
-                    from: "books",
-                    localField: "_id",
-                    foreignField: "_id",
-                    as: "book"
-                }
-            },
-            {
-                $unwind: "$book"
-            },
-            {
-                $project: {
-                    totalQuantity: 1,
-                    book: {
-                        title: "$book.title",
-                        isbn: "$book.isbn"
-                    }
+    const summary = yield borrow_model_1.Borrow.aggregate([
+        { $group: { _id: "$book", totalQuantity: { $sum: "$quantity" } } },
+        {
+            $lookup: {
+                from: "books",
+                localField: "_id",
+                foreignField: "_id",
+                as: "book"
+            }
+        },
+        { $unwind: "$book" },
+        {
+            $project: {
+                totalQuantity: 1,
+                book: {
+                    title: "$book.title",
+                    isbn: "$book.isbn"
                 }
             }
-        ]);
-        res.json({
-            success: true,
-            message: "Borrowed books summary retrieved successfully",
-            data: summary
-        });
-    }
-    catch (err) {
-        (0, errorHandler_1.handleError)(res, err);
-    }
+        }
+    ]);
+    res.json({ success: true, message: "Borrowed books summary retrieved successfully", data: summary });
 });
 exports.getBorrowSummary = getBorrowSummary;
