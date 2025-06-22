@@ -1,6 +1,10 @@
-GitHub Repository Link :https://github.com/Rayhan9966/rayhan-Apollo-Level2-Web-Dev-B5-Assignment-3-library-management-
-Live Deployment Link :
-Video Explanation (Public Link):https://drive.google.com/drive/folders/1k1udCEmXzQjhA7UJVJRPQXJBBq7lRg88?usp=sharing
+=>GitHub Repository Link :https://github.com/Rayhan9966/rayhan-Apollo-Level2-Web-Dev-B5-Assignment-3-library-management-
+
+
+=>Live Deployment Link :https://library-management-api-eosin-one.vercel.app
+
+
+=>Video Explanation (Public Link):https://drive.google.com/drive/folders/1k1udCEmXzQjhA7UJVJRPQXJBBq7lRg88?usp=sharing
  # rayhan-Apollo-Level2-Web-Dev-B5-Assignment-3-library-management-
 
 
