@@ -50,7 +50,7 @@ app.use(express.json());
 // Create handler for GET request /
 const getRootController = (req: Request, res: Response) => {
   // Send response text
-  res.send('Weclome to Assignment 3 !!!')
+  res.send('Weclome to Assignment 4 Libraray Management System Backend !!!')
 }
 // Route handler for /
 app.get('/', getRootController)
